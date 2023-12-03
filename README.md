@@ -40,3 +40,4 @@ RUN chown -R debian-tor:debian-tor /var/lib/tor/hidden_service/
 CMD service tor start && lighttpd -D -f /etc/lighttpd/lighttpd.conf
 ```
 
+Crea il docker-compose.yml: [docker-compose.yml](./docker-compose.yml) 
