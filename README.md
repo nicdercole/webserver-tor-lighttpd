@@ -6,8 +6,7 @@ Genera la Chiave Privata e l'Hostname: Usa Tor per creare una nuova coppia di ch
 
 Crea il Dockerfile: [dockerfile](./dockerfile) 
 
-```javascript
-
+```bash
 FROM debian
 
 # Aggiorna i pacchetti e installa Tor e lighttpd
@@ -40,3 +39,4 @@ RUN chown -R debian-tor:debian-tor /var/lib/tor/hidden_service/
 # Comando per avviare i servizi
 CMD service tor start && lighttpd -D -f /etc/lighttpd/lighttpd.conf
 ```
+
