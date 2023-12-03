@@ -56,3 +56,11 @@ services:
       - ./tor:/etc/tor
 ```
 
+# in alternativa
+
+```bash
+docker pull nicdercole/webserver-tor-lighttpd
+```
+```bash
+docker run -d --name debian_lighttpd_tor -p 8888:80 -v $(pwd)/html:/var/www/html -v $(pwd)/tor:/etc/tor my-tor-webserver
+```
