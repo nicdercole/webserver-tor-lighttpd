@@ -41,3 +41,18 @@ CMD service tor start && lighttpd -D -f /etc/lighttpd/lighttpd.conf
 ```
 
 Crea il docker-compose.yml: [docker-compose.yml](./docker-compose.yml) 
+
+```bash
+version: '3'
+
+services:
+  webserver-tor:
+    build: .
+    container_name: debian_lighttpd_tor
+    ports:
+      - "8888:80"
+    volumes:
+      - ./html:/var/www/html
+      - ./tor:/etc/tor
+```
+
