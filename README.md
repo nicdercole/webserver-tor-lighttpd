@@ -67,4 +67,4 @@ docker run -d --name debian_lighttpd_tor -p 8888:80 -v $(pwd)/html:/var/www/html
 
 # info
 
-[nicdercole/webserver-tor-lighttpd]([https://www.google.com](https://hub.docker.com/r/nicdercole/webserver-tor-lighttpd)https://hub.docker.com/r/nicdercole/webserver-tor-lighttpd "nicdercole su dockerhub")
+[nicdercole/webserver-tor-lighttpd](https://hub.docker.com/r/nicdercole/webserver-tor-lighttpd "nicdercole su dockerhub")
