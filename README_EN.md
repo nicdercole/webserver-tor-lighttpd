@@ -1,13 +1,13 @@
-Creating a Docker Machine for an .Onion Site with Dockerfile, Security Keys, and Hostname File for Tor
+# Creating a Docker Machine for an .Onion Site with Dockerfile, Security Keys, and Hostname File for Tor
 
 This guide explains how to create a Docker machine to host an .onion website, using a Dockerfile to include the necessary security keys and the hostname file for Tor. It's important to generate these files through Tor before proceeding with the Dockerfile configuration to avoid recreating the keys every time the Docker machine starts.
 Generate Private Key and Hostname:
 
 Use Tor to create a new pair of keys and a hostname for your hidden service. This is done by configuring Tor to create a new hidden service and letting it automatically generate these files. Save the Generated Files: They are usually located in /var/lib/tor/hidden_service/.
-Create the Dockerfile:
 
-Dockerfile
+Create the Dockerfile:[dockerfile](./dockerfile)
 
+```bash
 FROM debian
 
 # Update packages and install Tor and lighttpd
@@ -40,10 +40,9 @@ RUN chown -R debian-tor:debian-tor /var/lib/tor/hidden_service/
 # Command to start the services
 CMD service tor start && lighttpd -D -f /etc/lighttpd/lighttpd.conf
 
-Create the docker-compose.yml:
+Create the docker-compose.yml:[docker-compose.yml](./docker-compose.yml) 
 
-yaml
-
+```bash
 version: '3'
 
 services:
@@ -55,15 +54,17 @@ services:
     volumes:
       - ./html:/var/www/html
       - ./tor:/etc/tor
+```
 
-Alternatively
+# Alternatively
 
-bash
-
+```bash
 docker pull nicdercole/webserver-tor-lighttpd
-
+```
+```bash
 docker run -d --name debian_lighttpd_tor -p 8888:80 -v $(pwd)/html:/var/www/html -v $(pwd)/tor:/etc/tor my-tor-webserver
+```
 
-Info
+# Info
 
-nicdercole/webserver-tor-lighttpd
+[nicdercole/webserver-tor-lighttpd](https://hub.docker.com/r/nicdercole/webserver-tor-lighttpd "nicdercole su dockerhub")
