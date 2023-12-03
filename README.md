@@ -6,4 +6,4 @@ Passo 1: Generazione delle Chiavi e del File Hostname con Tor
 
 Genera la Chiave Privata e l'Hostname: Usa Tor per creare una nuova coppia di chiavi e un hostname per il tuo servizio nascosto. Questo si fa configurando Tor per creare un nuovo servizio nascosto e lasciando che generi automaticamente questi file. Salva i File Generati solitamente si trovano in /var/lib/tor/hidden_service/.
 
-Crea il Dockerfile: [dockerfile](dockerfile.md)
+Crea il Dockerfile: [dockerfile](dockerfile)
